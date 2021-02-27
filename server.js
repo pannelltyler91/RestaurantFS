@@ -1,12 +1,20 @@
 const express = require("express");
 const app = express();
-const db = require('./models');
+//connects to data base. 
+// const db = require('./models');
 const pbkdf2 = require('pbkdf2');
 const crypto = require('crypto');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: true }));
+const es6Renderer = require("express-es6-template-engine");
+app.engine("html", es6Renderer);
+app.set("views", "templates");
+app.set("view engine", "html");
 
 app.use(session({
     secret:'notHappyAvian',
@@ -29,8 +37,13 @@ function encryptPassword(password,pass_salt){
 
 //home page rendering
 app.get('/', (req,res)=>{
+    res.render("home", {
+        partials: {
+            head: "/partials/head",
+        },
+    });
 
-})
+});
 
 //create a new User
 app.post('/newUser',(req,res)=>{
@@ -54,11 +67,21 @@ app.post('/payment',(req,res)=>{
 
 //render payment options,render order details
 app.get('/checkout', (req,res) => {
+    res.render("payments", {
+        partials: {
+            head: "/partials/head"
+        }
+    })
 
 })
 
 // confirmation of payment ending point 
 app.get('/readyToEat', (req,res) => {
+    res.render("readytoeat", {
+        partials: {
+            head: "/partials/head"
+        }
+    })
 
 })
 
