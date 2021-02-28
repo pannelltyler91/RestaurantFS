@@ -1,102 +1,36 @@
-const express = require("express");
-const app = express();
-//connects to data base. 
-// const db = require('./models');
-const pbkdf2 = require('pbkdf2');
-const crypto = require('crypto');
-const session = require('express-session');
-const bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var router = require('router')
+// specific mount path for css/javascript specific files to work. 
+app.use('/required', express.static('required'));
+//connects Account and Home Routes. 
+var AccountRoutes = require('./controllers/account_controller');
+var HomeRoutes = require('./controllers/home_controller');
 
-app.use(express.json());
+
+var port = process.env.PORT || 3000;
+
+app.set('view engine','ejs');
 app.use(bodyParser.json());
-app.use(express.urlencoded({extended: false}));
-app.use(bodyParser.urlencoded({ extended: true }));
-const es6Renderer = require("express-es6-template-engine");
-app.engine("html", es6Renderer);
-app.set("views", "templates");
-app.set("view engine", "html");
+app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(session({
-    secret:'notHappyAvian',
-    resave:true,
-    savUninitialized:true,
-    cookie:{maxAge:60*60*1000}
-
-}))
-
-//function that encrypts passwords
-function encryptPassword(password,pass_salt){
-    var salt = pass_salt ? pass_salt: crypto.randomBytes(20).toString('hex');
-    var key = pbkdf2.pbkdf2Sync(
-        passowrd,salt,36000,256,'sha256'
-    );
-
-    var hash = key.toString('hex');
-    return `$${salt}$${hash}`;
-}
-
-//home page rendering
-app.get('/', (req,res)=>{
-    res.render("home", {
-        partials: {
-            head: "/partials/head",
-        },
-    });
-
-});
-
-//create a new User
-app.post('/newUser',(req,res)=>{
-
-})
-
-//login for existing users and redirect to order page
-app.post('/login',(req,res)=>{
-
-})
-
-//posts order details to db
-app.post('/order', (req,res) => {
-
-})
-
-//posts payment details to db
-app.post('/payment',(req,res)=>{
-
-})
-
-//render payment options,render order details
-app.get('/checkout', (req,res) => {
-    res.render("payments", {
-        partials: {
-            head: "/partials/head"
-        }
-    })
-
-})
-
-// confirmation of payment ending point 
-app.get('/readyToEat', (req,res) => {
-    res.render("readytoeat", {
-        partials: {
-            head: "/partials/head"
-        }
-    })
-
-})
+app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
+// uses the 'accounts' routes respectively.
+app.use('/',AccountRoutes.AccountRoutes);
+// This middleware should check to make sure if a user is logged in when first open page. If not redirects to login page. 
+app.use(function(req,res,next){
+    if(req.session.email == null || req.session.email.length ==0 ){
+        res.redirect('/login'); 
+    }
+    else{
+      next();
+    }
+  });
+  app.use('/',HomeRoutes.HomeRoutes);
 
 
-
-
-
-
-
-
-
-
-
-
-
-app.listen(3000, ()=>{
-    console.log('Server is listening!')
-})
+  app.listen(port, () => {
+    console.log(`App listening on PORT ${port}`);
+  });
