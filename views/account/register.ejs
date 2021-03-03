@@ -9,23 +9,25 @@
 
     <title>SenPie</title>
   <title>Create a Jangle account</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Montserrat&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
-<body>
+<body style="background-image: url('/required/css/images/registerwallpaper.jpg');display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 100vh">
 <%= errors %>
 <div class="container">
       <form class="login-form" method="POST" action="/register"  >
-        <h2 class="form-heading">Create your Account</h2>
+        <h2 style="margin-bottom: 40px; font-family:'Montserrat', sans-serif;" class="form-heading">Ready to indulge on your favorite anime-inspired treats? Create your account below!</h2>
         <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
         <input name="email" type="text" class="form-control" placeholder="Email" autofocus="true"/>
         <input name="password" type="password" class="form-control" placeholder="Password" />
         <input name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <button style="font-family:'Englebert', cursive; font-size:25px;background:rgb(97, 107, 241); margin-top:5px; padding-bottom:5px;" class="btn btn-lg btn-primary btn-block" type="submit">Sign Me Up!</button>
       </form>
 
 </div>
