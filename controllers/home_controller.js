@@ -15,5 +15,6 @@ HomeRoutes.get('/',function(req,res){
         menu: menu
     });
 });
+
 // makes this route accesible in the server.js 
 module.exports = {"HomeRoutes" : HomeRoutes};
