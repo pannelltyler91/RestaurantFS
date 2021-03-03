@@ -11,7 +11,7 @@ var accountRoutes = express.Router();
 // All Account routes 
 //Login Route
 accountRoutes.get('/login',function(req,res){
-    res.render('account/login');
+    res.render('account/login',{errors: ""});
 });
 //Register Route
 accountRoutes.get('/register',function(req,res){  
@@ -62,14 +62,14 @@ accountRoutes.post('/login',function(req,res){
                 req.session.email = req.body.email;
                 res.redirect('/');
             }
-            // Right username  Wrong password redirects you to register page. *I need To fix*
+            // Wrong password rerenders the login page with Password Error  *Fixed*
             else{
-                res.redirect('/register');
+                res.render('account/login', {errors: "Password Is Wrong"});
             }
         }
-        // if username is wrong re renders login page. *need to make error message*
+        // Wrong Username  re renders login page with Username error. *Fixed*
         else{
-            res.redirect('/login');
+            res.render('account/login', {errors: "Username is Wrong"});
         }
     });
 });
