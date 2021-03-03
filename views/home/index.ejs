@@ -12,6 +12,45 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body class="container" style="width:98%">
-    <h1>welcome, logged in as <%= user_email %></h1>
+    <h1>Welcome <%=user_email %>!</h1>
+    <div id="menu">
+      <form action="/order" method="POST">
+       <label class="card" for="menuItem1"><%=menu[0].name%></label>
+       <label>Price:$<%=menu[0].price%></label>
+       <input id="menuItem1" type="button" name="menuItem1" value="Add to Cart"> 
+      <br>
+       <label class="card" for="menuItem2"><%=menu[1].name%></label>
+       <label>Price:$<%=menu[1].price%></label>
+       <input id="menuItem2" type="button" name="menuItem1" value="Add to Cart"> 
+        <br>
+       <label class="card" for="menuItem3"><%=menu[2].name%></label>
+       <label>Price:$<%=menu[2].price%></label>
+       <input id="menuItem3" type="button" name="menuItem1" value="Add to Cart"> 
+        <br>
+       <label class=card for="menuItem4"><%=menu[3].name%></label>
+       <label>Price:$<%=menu[3].price%></label>
+       <input id="menuItem4" type="button" name="menuItem1" value="Add to Cart"> 
+      <br>
+       <label class="card" for="menuItem5"><%=menu[4].name%></label>
+       <label>Price:$<%=menu[4].price%></label>
+       <input id="menuItem5" type="button" name="menuItem1" value="Add to Cart"> 
+      </form>
+    </div>
+    <div class="col-25 card">
+      <div class="container">
+        <h4>Cart
+          <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>4</b>
+          </span>
+        </h4>
+        <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+        <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+        <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+        <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+      </div>
+    </div>
   </body>
 </html>
