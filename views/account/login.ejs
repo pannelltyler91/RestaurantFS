@@ -20,20 +20,33 @@
 
 <body style="background-image: url('/required/css/images/chef-6.7s-1084px.gif'); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 100vh;">
 
-<body>
+
   <%= errors %>
+  <h1 style="font-family:'Englebert', sans-serif; font-size:75px; color:rgb(48, 202, 207);-webkit-text-stroke: 1px black;margin-bottom:40px;"> Welcome to Sen-Pie!  </h1>
+    <form action="/login" method="POST">
+    <div>
+    <label style="font-family:'Montserrat', sans-serif;";for="email">Email</label>
+    <input style="font-family:'Montserrat', sans-serif; border:rgb(48, 202, 207) solid 2.5px; border-radius: 8px; height:25px; margin-bottom:10px;"
+    type="email"
+    name="email"
+    placeholder="Enter Email"
+    />
+    </div>
+    <div>
+        <label style="font-family:'Montserrat', sans-serif;"; for="password">Password</label>
+        <input style=" font-family:'Montserrat', sans-serif; border:rgb(48, 202, 207) solid 2.5px; border-radius:8px; height:25px;margin-bottom:10px;"
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+        />
+    </div>
+    <button style="font-family:'Montserrat', sans-serif; height:35px; width:100px; margin-left:5px; margin-bottom: 10px; position:relative; top:50%; left:45%; ";type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+    <p style="font-family:'Montserrat', sans-serif";>Don't Have An Account? <a href="/register">Register Here</a></p>
+  </div>
     
-<div class="container">
-  <form method="POST" action="/login"  >
-      <h2>Log in </h2>
+</body>>
 
-      <input name="email" type="text" class="form-control" placeholder="Email Address"
-              autofocus="true"/>
-      <input name="password" type="password" class="form-control" placeholder="Password"/>
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-          
-      <div style="text-align:center;margin-bottom:10px;margin-top:15px"> Don't have an account? <a href='/register'>Sign up</a></div>
 
     
   

@@ -26,9 +26,18 @@ HomeRoutes.get('/',function(req,res){
 });
 
 HomeRoutes.post('/order', (req,res) => {
-    db.orders.create()
+    db.orders.create({
+        firstName: req.body.firstName, 
+        lastName: req.body.lastName, 
+        email: req.body.email,
+        gender: req.body.gender
+      }).then(function(user){
+          console.log(user);
+          res.send(user);
+      });
+    })
 
-});
+
 
 // makes this route accesible in the server.js 
 module.exports = {"HomeRoutes" : HomeRoutes};
