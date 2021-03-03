@@ -24,5 +24,6 @@ HomeRoutes.get('/',function(req,res){
     
     });
 });
+
 // makes this route accesible in the server.js 
 module.exports = {"HomeRoutes" : HomeRoutes};
