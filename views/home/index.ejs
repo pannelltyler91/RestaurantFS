@@ -20,24 +20,29 @@
       <h2>Menu</h2>
       <form action="/order" method="POST">
        <label class="card" for="menuItem1"><%=menu[0].name%></label>
-       <label>Price:$<%=menu[0].price%></label>
-       <input id="menuItem1" type="checkbox" name="menuItem1" value="Add to Cart"> 
+       <label for="price1">Price:$<%=menu[0].price%></label>
+       <input type="hidden" id="price1" name="price1" value="<%=menu[0].price%>">
+       <input id="menuItem1" type="checkbox" name="menuItem1" value="<%=menu[0].name%>"> 
       <br>
        <label class="card" for="menuItem2"><%=menu[1].name%></label>
-       <label>Price:$<%=menu[1].price%></label>
-       <input id="menuItem2" type="checkbox" name="menuItem2" value="Add to Cart"> 
+       <label for="price2">Price:$<%=menu[1].price%></label>
+       .<input type="hidden" id="price2" name="price2" value="<%=menu[1].price%>">
+       <input id="menuItem2" type="checkbox" name="menuItem2" value="<%=menu[1].name%>"> 
         <br>
        <label class="card" for="menuItem3"><%=menu[2].name%></label>
-       <label>Price:$<%=menu[2].price%></label>
-       <input id="menuItem3" type="checkbox" name="menuItem3" value="Add to Cart"> 
+       <label for="price3">Price:$<%=menu[2].price%></label>
+       <input type="hidden" id="price3" name="price3" value="<%=menu[2].price%>">
+       <input id="menuItem3" type="checkbox" name="menuItem3" value="<%=menu[2].name%>"> 
         <br>
        <label class=card for="menuItem4"><%=menu[3].name%></label>
-       <label>Price:$<%=menu[3].price%></label>
-       <input id="menuItem4" type="checkbox" name="menuItem4" value="Add to Cart"> 
+       <label for="price4">Price:$<%=menu[3].price%></label>
+       <input type="hidden" id="price=4" name="price4" value="<%=menu[3].price%>">
+       <input id="menuItem4" type="checkbox" name="menuItem4" value="<%=menu[3].name%>"> 
       <br>
        <label class="card" for="menuItem5"><%=menu[4].name%></label>
-       <label>Price:$<%=menu[4].price%></label>
-       <input id="menuItem5" type="checkbox" name="menuItem5" value="Add to Cart"> 
+       <label for="price5">Price:$<%=menu[4].price%></label>
+       <input type="hidden" id="price5" name="price5" value="<%=menu[4].price%>">
+       <input id="menuItem5" type="checkbox" name="menuItem5" value="<%=menu[4].name%>"> 
        <br>
 
        <input type="submit" id="submit" name="submit" value="Submit">

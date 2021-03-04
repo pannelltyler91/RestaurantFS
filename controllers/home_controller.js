@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var path = require('path');
+const db = require('../models')
 var HomeRoutes = express.Router();
 
 var correct_path = path.join(__dirname+'/../views/home/');
@@ -27,13 +28,16 @@ HomeRoutes.get('/',function(req,res){
 
 HomeRoutes.post('/order', (req,res) => {
     db.orders.create({
-        firstName: req.body.firstName, 
-        lastName: req.body.lastName, 
-        email: req.body.email,
-        gender: req.body.gender
-      }).then(function(user){
-          console.log(user);
-          res.send(user);
+        item1: req.body.menuItem1, 
+        item2:req.body.menuItem2,
+        item3:req.body.menuItem3,
+        item4:req.body.menuItem4,
+        item5:req.body.menuItem5,
+        totalPrice:parseInt(req.body.price1)+parseInt(req.body.price2)+ parseInt(req.body.price3)+parseInt(req.body.price4)+parseInt(req.body.price5)
+        
+      }).then(function(order){
+          console.log(order);
+          res.render('checkout/checkout.ejs');
       });
     })
 
