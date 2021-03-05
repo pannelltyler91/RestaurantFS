@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     item4: DataTypes.STRING,
     item5: DataTypes.STRING,
     custom_fkey_user_id:DataTypes.INTEGER
+
   }, {
     sequelize,
     modelName: 'orders',
