@@ -30,15 +30,11 @@ app.use(function(req,res,next){
     }
   });
   app.use('/',HomeRoutes.HomeRoutes);
-<<<<<<< HEAD
-// Order Routes. 
- 
-=======
-
->>>>>>> f048dfab062bc4d177f27ba32a6d08fa14a3cce4
 
 
-  app.listen(port, () => {
+
+  app.listen(process.env.PORT || 3000
+    , () => {
     console.log(`App listening on PORT ${port}`);
   });
   
