@@ -40,7 +40,12 @@ HomeRoutes.post('/order', (req,res) => {
           res.render('checkout/checkout.ejs');
       });
     })
-
+HomeRoutes.get('/done', (req,res) => {
+    let email = req.session.email;
+    res.render('checkout/confirmation.ejs', {
+        user_email: email
+    });
+})
 
 
 // makes this route accesible in the server.js 
