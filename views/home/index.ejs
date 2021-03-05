@@ -7,13 +7,33 @@
     <meta name="author" content="siddub">
     <title>SenPie</title>
     <link href="/required/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet">    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-  <body class="container" style="width:98%">
-
-    <h1>Welcome <%=user_email %>!</h1>
+  <body>
+    <div class="nav">
+      <nav> 
+        <ul>
+          <a href="#user"><%=user_email %></a> 
+        </ul> 
+      </nav> 
+    </div>
+    <section> 
+      <header class="section-intro"> 
+              <h1>Sen-Pie Baking Co.</h1>
+          </header>
+    </section> 
+  
+    <section class="about-section"> 
+      <article></article>
+        <p> 
+          We're in the business of making weebs happy here at Sen-Pie Baking Co! 
+          We create delicious treats inspired by popular and loved animes-all made in our own little kitchen every day. 
+          Keep scrolling to view our variety of sweets and begin your order!
+        </p> 
+      </article> 
+    </section> 
     <br>
     <!--Selecting options to order from menu-->
     <div id="menu" class="container">
@@ -46,4 +66,6 @@
        <br>
 
        <input type="submit" id="submit" name="submit" value="Submit">
+    
   </body>
+</html>
