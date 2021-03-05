@@ -11,7 +11,6 @@ var HomeRoutes = require('./controllers/home_controller');
 var OrderRoutes = require('./controllers/checkout_controller');
 
 
-
 var port = process.env.PORT || 3000;
 
 app.set('view engine','ejs');
@@ -34,8 +33,7 @@ app.use(function(req,res,next){
 
 
 
-  app.listen(process.env.PORT || 3000
-    , () => {
+  app.listen(port, () => {
     console.log(`App listening on PORT ${port}`);
   });
-
+  

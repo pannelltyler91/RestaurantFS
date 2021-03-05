@@ -7,7 +7,7 @@ const db = require('../models')
 var HomeRoutes = express.Router();
 
 var correct_path = path.join(__dirname+'/../views/home/');
-// classic get route adds in extra fluff to be able to show the email in the home page. also adds in menu items. 
+// classic get route adds in extra fluff to be able to show the email in the home page. also adds in menu items.
 HomeRoutes.get('/',function(req,res){
 
     var menu =
@@ -31,13 +31,8 @@ HomeRoutes.post('/order', (req,res) => {
         item1: req.body.menuItem1, 
         item2:req.body.menuItem2,
         item3:req.body.menuItem3,
-<<<<<<< HEAD
-        item4:"ice cream",
+        item4:req.body.menuItem4,
         item5:req.body.menuItem5,
-=======
-        item4:'test1',
-        item5:'test2',
->>>>>>> c1c10ca30055e52e692e1c6becf9f4bed43555e7
         totalPrice:parseInt(req.body.price1)+parseInt(req.body.price2)+ parseInt(req.body.price3)+parseInt(req.body.price4)+parseInt(req.body.price5)
         
       }).then(function(order){
