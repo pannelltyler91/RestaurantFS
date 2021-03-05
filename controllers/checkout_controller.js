@@ -6,17 +6,17 @@ var path = require('path');
 var CheckoutRoutes = express.Router();
 
 CheckoutRoutes.get('/',function(req,res){
+db.orders.findAll()
+.then(function (user){
+    console.log(user);
+    res.render(user);
+})
 
+})
                                             
     
-    res.send('home/index',{
-        user_email: email, 
-        menu:menu
-    
+  
 
-    
-    });
-});
 
 
 module.exports = {"CheckoutRoutes" : CheckoutRoutes};

@@ -1,3 +1,187 @@
-h1{
-    background-color: coral;
+body {
+    background-color:rgb(243, 203, 203);
 }
+
+
+.nav-flex-row { 
+	display: flex; 
+	flex-direction: row; 
+	justify-content: left; 
+	position: absolute; 
+	float:right; 
+    background-color:white;
+	width: 100%; 
+	padding: 5px; 
+} 
+
+.nav { 
+	font-family: 'Montserrat', sans-serif; 
+    display:flex; 
+    flex-direction:row;
+    height:fit-content;
+    justify-content: flex-end;
+	font-size: 1em; 
+	text-transform: lowercase; 
+} 
+.nav-flex-row li a:hover{ 
+	background: #000000; 
+} 
+
+.section-intro {
+    font-family:'Barrio', cursive; 
+	height: 395px; 
+	background-image: url('/required/css/images/bakery2.jpg'); 
+	background-size:cover;
+    display: flex; 
+	justify-content: center; 
+	align-items: center; 
+} 
+
+.section-intro h1 { 
+	text-align: center; 
+	color: #000; 
+    font-size:9em;
+    -webkit-text-stroke: 1px white;
+    
+} 
+
+.section-intro header { 
+	display: flex; 
+	flex: 4; 
+	flex-direction: row; 
+	justify-content: center; 
+	align-items: center; 
+} 
+
+.link-to-book-wrapper { 
+	flex: 1; 
+} 
+
+.about-section { 
+	display: flex; 
+	align-items: center; 
+	padding: 50px 30px; 
+} 
+
+
+.about-section p, 
+.about-section h3 { 
+	text-align: center; 
+	width: 60%;
+	margin: auto; 
+	font-family: 'Montserrat', sans-serif; 
+	font-size: 1.5em; 
+	text-transform: uppercase; 
+} 
+
+.carousel-inner { 
+	height: 700px; 
+} 
+
+.row-flex { 
+	display: flex; 
+	flex-direction: row; 
+} 
+
+.flex-column-form { 
+	display: flex; 
+	flex-direction: column; 
+	flex: 1; 
+	margin: 30px 20px; 
+} 
+
+.btn.btn-primary { 
+	font-family: 'Big Shoulders Text', cursive; 
+	color: #ffffff; 
+	background-color: #95999e; 
+	text-transform: uppercase; 
+	font-size: 16px; 
+	padding: 5px 10px; 
+	letter-spacing: 2px; 
+	border: 0; 
+} 
+
+.btn.btn-primary:hover { 
+	background-color: #747474; 
+} 
+.opening-time, 
+.contact-adress { 
+	flex: 1; 
+	margin: 30px 20px; 
+	font-size: 1.2em; 
+} 
+
+.form-group p { 
+	font-size: 1.2em; 
+} 
+
+.opening-time p span, 
+.contact-adress p span { 
+	display: block; 
+} 
+
+@media (min-width:577px) and (max-width: 800px) { 
+
+	.section-intro { 
+		height: 500px; 
+	} 
+
+	.about-section p, 
+	.about-section h3 { 
+		font-size: 20px; 
+	} 
+
+	.carousel-inner { 
+		height: auto; 
+	} 
+
+	.row-flex { 
+		display: flex; 
+		flex-direction: column; 
+	} 
+} 
+
+@media screen and (max-width: 576px) { 
+	.section-intro { 
+		height: 300px; 
+	} 
+
+	.about-section { 
+		padding: 30px; 
+	} 
+
+	.section-intro h1 { 
+		font-size: 2em; 
+	} 
+
+	.about-section p, 
+	.about-section h3 { 
+		font-size: 15px; 
+	} 
+
+	.carousel-inner { 
+		height: auto; 
+	} 
+
+	.row-flex { 
+		display: flex; 
+		flex-direction: column; 
+	} 
+
+	.row-flex h3 { 
+		font-size: 25px; 
+		text-align: center; 
+	} 
+
+	.form-group p { 
+		font-size: 15px; 
+	} 
+
+	.opening-time p span, 
+	.contact-adress p span { 
+		font-size: 15px; 
+		text-align: center; 
+	} 
+
+} 
+

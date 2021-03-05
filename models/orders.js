@@ -19,7 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     item2: DataTypes.STRING,
     item3: DataTypes.STRING,
     item4: DataTypes.STRING,
+<<<<<<< HEAD
     item5: DataTypes.STRING
+=======
+    item5: DataTypes.STRING,
+    custom_fkey_user_id:DataTypes.INTEGER
+
+>>>>>>> c1c10ca30055e52e692e1c6becf9f4bed43555e7
   }, {
     sequelize,
     modelName: 'orders',
