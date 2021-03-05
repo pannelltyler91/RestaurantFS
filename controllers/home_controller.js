@@ -31,8 +31,8 @@ HomeRoutes.post('/order', (req,res) => {
         item1: req.body.menuItem1, 
         item2:req.body.menuItem2,
         item3:req.body.menuItem3,
-        item4:req.body.menuItem4,
-        item5:req.body.menuItem5,
+        item4:'test1',
+        item5:'test2',
         totalPrice:parseInt(req.body.price1)+parseInt(req.body.price2)+ parseInt(req.body.price3)+parseInt(req.body.price4)+parseInt(req.body.price5)
         
       }).then(function(order){
@@ -40,7 +40,12 @@ HomeRoutes.post('/order', (req,res) => {
           res.render('checkout/checkout.ejs');
       });
     })
-
+HomeRoutes.get('/done', (req,res) => {
+    let email = req.session.email;
+    res.render('checkout/confirmation.ejs', {
+        user_email: email
+    });
+})
 
 
 // makes this route accesible in the server.js 

@@ -31,13 +31,11 @@ app.use(function(req,res,next){
     }
   });
   app.use('/',HomeRoutes.HomeRoutes);
-// Order Routes. 
- //app.use('/',OrderRoutes.OrderRoutes);
 
 
-  app.listen(port, () => {
+
+  app.listen(process.env.PORT || 3000
+    , () => {
     console.log(`App listening on PORT ${port}`);
   });
-
-
 
