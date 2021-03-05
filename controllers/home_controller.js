@@ -7,7 +7,7 @@ const db = require('../models')
 var HomeRoutes = express.Router();
 
 var correct_path = path.join(__dirname+'/../views/home/');
-// classic get route adds in extra fluff to be able to show the email in the home page. 
+// classic get route adds in extra fluff to be able to show the email in the home page. also adds in menu items.
 HomeRoutes.get('/',function(req,res){
 
     var menu =
@@ -25,7 +25,7 @@ HomeRoutes.get('/',function(req,res){
     
     });
 });
-
+// Post route for orders and renders checkout page. 
 HomeRoutes.post('/order', (req,res) => {
     db.orders.create({
         item1: req.body.menuItem1, 
@@ -40,6 +40,7 @@ HomeRoutes.post('/order', (req,res) => {
           res.render('checkout/checkout.ejs');
       });
     })
+// confirmation page routes.     
 HomeRoutes.get('/done', (req,res) => {
     let email = req.session.email;
     res.render('checkout/confirmation.ejs', {
