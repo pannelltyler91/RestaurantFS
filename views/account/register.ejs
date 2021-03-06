@@ -9,7 +9,7 @@
 
     <title>SenPie</title>
   <title>Create a Jangle account</title> 
-  <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Quicksand&display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,17 +17,17 @@
 
 </head>
 
-<body style="background-image: url('/required/css/images/registerwallpaper.jpg');display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 100vh">
+<body style="background-image: url('/required/css/images/register.gif');background-size:40vw;display:flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 100vh">
 <%= errors %>
 <div class="container">
       <form class="login-form" method="POST" action="/register"  >
-        <h2 style="margin-bottom: 40px; font-family:'Montserrat', sans-serif;" class="form-heading">Ready to indulge on your favorite anime-inspired treats? Create your account below!</h2>
-        <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
-        <input name="email" type="text" class="form-control" placeholder="Email" autofocus="true"/>
-        <input name="password" type="password" class="form-control" placeholder="Password" />
-        <input name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
+        <h2 style="margin-bottom: 40px; font-family:'Quicksand', sans-serif;font-size:30px;"class="form-heading">Ready to indulge on your favorite anime-inspired treats? Create your account below!</h2>
+        <input style="border:solid rgb(133, 140, 230) 2px;border-radius:12px;box-shadow:none; background:transparent;width:35em; margin-bottom:20px;margin-left:80px;";name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
+        <input style="border:solid rgb(133, 140, 230) 2px;border-radius:12px;box-shadow:none; background:transparent;width:35em; margin-bottom:20px;margin-left:80px;";name="email" type="text" class="form-control" placeholder="Email" autofocus="true"/>
+        <input style="border:solid rgb(133, 140, 230) 2px;border-radius:12px;box-shadow:none; background:transparent;width:35em; margin-bottom:20px;margin-left:80px;";name="password" type="password" class="form-control" placeholder="Password" />
+        <input style="border:solid rgb(133, 140, 230) 2px;border-radius:12px;box-shadow:none; background:transparent;width:35em; margin-bottom:20px;margin-left:80px;";name="passwordConfirm" type="password" class="form-control" placeholder="Password confirm" />
 
-        <button style="font-family:'Englebert', cursive; font-size:25px;background:rgb(97, 107, 241); margin-top:5px; padding-bottom:5px;" class="btn btn-lg btn-primary btn-block" type="submit">Sign Me Up!</button>
+        <button style="font-family:'Quicksand', sans-serif; color:black;font-size:25px;background:rgb(133, 140, 230);border:0;width:20em; margin-top:25px;margin-left:78px; padding-bottom:8px;" class="btn btn-lg btn-primary btn-block" type="submit">Sign Me Up!</button>
       </form>
 
 </div>
