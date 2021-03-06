@@ -36,8 +36,11 @@ HomeRoutes.post('/order', (req,res) => {
         totalPrice:parseInt(req.body.price1)+parseInt(req.body.price2)+ parseInt(req.body.price3)+parseInt(req.body.price4)+parseInt(req.body.price5)
         
       }).then(function(order){
-          console.log(order);
-          res.render('checkout/checkout.ejs');
+          console.log(order.toJSON());
+          console.log(req.body);
+          res.render('checkout/checkout.ejs',{
+              order:order
+          });
       });
     })
 
