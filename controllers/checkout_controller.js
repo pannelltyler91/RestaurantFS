@@ -5,18 +5,15 @@ var ejs = require('ejs');
 var path = require('path');
 var CheckoutRoutes = express.Router();
 
-CheckoutRoutes.get('/checkout',function(req,res){
+CheckoutRoutes.get('/',function(req,res){
 db.orders.findAll()
-.then(function (user){
-    console.log(user);
-    res.render(user);
+.then(function(order){
+    res.render('checkout/checkout',{
+        order:order
 })
-
-})
-                                            
-    
-  
+});
+ 
+});
 
 
-
-module.exports = {"CheckoutRoutes" : CheckoutRoutes};
+module.exports = {"CheckoutRoutes" : CheckoutRoutes}
