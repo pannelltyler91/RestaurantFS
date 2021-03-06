@@ -27,6 +27,7 @@ HomeRoutes.get('/',function(req,res){
 });
 // Post route for orders and renders checkout page. 
 HomeRoutes.post('/order', (req,res) => {
+    console.log("this was posted");
     db.orders.create({
         item1: req.body.menuItem1, 
         item2:req.body.menuItem2,
