@@ -8,7 +8,7 @@ app.use('/required', express.static('required'));
 //connects Account and Home Routes. 
 var AccountRoutes = require('./controllers/account_controller');
 var HomeRoutes = require('./controllers/home_controller');
-var OrderRoutes = require('./controllers/checkout_controller');
+// var OrderRoutes = require('./controllers/checkout_controller');
 
 
 var port = process.env.PORT || 3000;
