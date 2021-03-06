@@ -27,6 +27,7 @@ HomeRoutes.get('/',function(req,res){
 });
 // Post route for orders and renders checkout page. 
 HomeRoutes.post('/order', (req,res) => {
+    console.log("this was posted");
     db.orders.create({
         item1:req.body.menuItem1, 
         item2:req.body.menuItem2,
@@ -38,8 +39,8 @@ HomeRoutes.post('/order', (req,res) => {
       }).then(function(order){
           console.log(order.toJSON());
           console.log(req.body);
-          res.render('checkout/checkout.ejs',{
-              order:order
+          res.render('checkout/checkout.ejs', {
+              order: order.toJSON()
           });
       });
     })
@@ -51,6 +52,7 @@ HomeRoutes.get('/done', (req,res) => {
     let email = req.session.email;
     res.render('checkout/confirmation.ejs', {
         user_email: email
+
     });
 })
 
