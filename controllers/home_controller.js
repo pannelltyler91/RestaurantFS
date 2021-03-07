@@ -28,6 +28,7 @@ HomeRoutes.get('/',function(req,res){
 // Post route for orders and renders checkout page. 
 HomeRoutes.post('/order', (req,res) => {
     console.log("this was posted");
+    
     db.orders.create({
         item1:req.body.menuItem1, 
         item2:req.body.menuItem2,
@@ -35,12 +36,12 @@ HomeRoutes.post('/order', (req,res) => {
         item4:req.body.menuItem4,
         item5:req.body.menuItem5,
         totalPrice:parseInt(req.body.price1)+parseInt(req.body.price2)+ parseInt(req.body.price3)+parseInt(req.body.price4)+parseInt(req.body.price5)
-        
       }).then(function(order){
           console.log(order.toJSON());
           console.log(req.body);
           res.render('checkout/checkout.ejs', {
               order: order.toJSON()
+              
           });
       });
     })
