@@ -15,13 +15,13 @@
   <body style="background-image:url('/required/css/images/register.gif')">
     <h1 style="font-family:'Barrio', cursive;font-size:50px;">Checkout</h1>
     <div class="col-25">
-      <div style="font-family:'Quicksand', sans-serif; width:200px;margin-left:50px;border:black solid 3px;border-radius:20px;padding:3px;";class="container">
-        <h4>Cart
+      <div style="font-family:'Quicksand', sans-serif;width:200px;margin-left:50px;border:black solid 3px;border-radius:20px;padding:3px;";class="container">
+
           <span class="price" style="color:black">
             <i class="fa fa-shopping-cart"></i>
             <b></b>
           </span>
-        </h4>
+      
 
         <p><a href="#"><%=order.item1%></a>
         <p><a href="#"><%=order.item2%></a> 
@@ -44,7 +44,7 @@
           <div style="font-family:'Quicksand', cursive;width:515px;";class="row">
             <div style="height:200px;"class="col-50">
               <h3>Billing Address</h3>
-              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <label style="left:-20px;"for="fname"><i class="fa fa-user"></i> Full Name</label>
               <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;";type="text" id="fname" name="firstname" placeholder="John M. Doe">
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
               <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;";type="text" id="email" name="email" placeholder="john@example.com">
@@ -53,19 +53,19 @@
               <label for="city"><i class="fa fa-institution"></i> City</label>
               <input style="background:transparent;border:0; border-bottom:solid black 2px;";type="text" id="city" name="city" placeholder="New York">
   
-              <div class="row">
+              <div style="margin-left:5px;"class="row">
                 <div class="col-50">
                   <label for="state">State</label>
                   <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;";type="text" id="state" name="state" placeholder="NY">
                 </div>
-                <div style="margin-left:45%;;"class="col-50">
+                <div style="left:20px;margin-left:45%;margin-top:-45px;"class="col-50">
                   <label for="zip">Zip</label>
                   <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;";type="text" id="zip" name="zip" placeholder="10001">
                 </div>
               </div>
             </div>
   
-            <div class="col-50">
+            <div style="font-family:'Quicksand', cursive;width:650px;"class="col-50">
               <h3>Payment</h3>
               <label for="fname">Accepted Cards</label>
               <div class="icon-container">
@@ -74,27 +74,27 @@
                 <i class="fa fa-cc-mastercard" style="color:red;"></i>
                 <i class="fa fa-cc-discover" style="color:orange;"></i>
               </div>
-              <label for="cname">Name on Card</label>
-              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+              <label style="left:-20px;"for="cname">Name on Card</label>
+              <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;"type="text" id="cname" name="cardname" placeholder="John More Doe">
               <label for="ccnum">Credit card number</label>
-              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;"type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
               <label for="expmonth">Exp Month</label>
-              <input type="text" id="expmonth" name="expmonth" placeholder="September">
+              <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;"type="text" id="expmonth" name="expmonth" placeholder="September">
   
               <div class="row">
-                <div class="col-50">
+                <div style="left:20px;margin-left:45%;margin-top:-45px;"class="col-50">
                   <label for="expyear">Exp Year</label>
-                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                  <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;"type="text" id="expyear" name="expyear" placeholder="2018">
                 </div>
-                <div class="col-50">
+                <div style="margin-left:3%;";class="col-50">
                   <label for="cvv">CVV</label>
-                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                  <input style="margin:10px;background:transparent;border:0; border-bottom:solid black 2px;"type="text" id="cvv" name="cvv" placeholder="352">
                 </div>
               </div>
             </div>
   
           </div>
-          <label>
+          <label style="margin-top:10px;margin-bottom:10px;font-family:'Quicksand',sans-serif;">
             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
           </label>
           <br>
