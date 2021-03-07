@@ -19,6 +19,15 @@ h1 {
 	margin-left:10px;
 	-webkit-text-stroke: .5px white;
 }
+h3 {
+	text-align:center;
+	font-family:'Barrio', cursive;
+	font-size:15px;
+	margin-left:20px;
+	margin-top:2px;
+
+}
+
 
 .nav {
 	position:absolute;
@@ -32,41 +41,58 @@ h1 {
 }
 
 #submit {
-	position:absolute;
-	bottom:15%;
-	left:92%;
-}
-  
-  
-.about-section { 
-    position:absolute;
-	bottom:8px;
-	right:16px;
-    background-color: #f3f3f3c0;  
-	width: 75%;
-	height:70px;
-	border-radius: 12px;
+	float:right;
+	margin-top:32%;
+	margin-right:15%;
+	width:175px;
+	height:65px;
 	font-family:'Quicksand', sans-serif;
-} 
-
-
+	border:0;
+	font-size:25px;
+	background-color: rgb(238, 231, 133);
+	color:rgb(226, 132, 132);
+	border-radius:30px;
+	opacity:92%;
+}
 
 .hours {
-	position:absolute;
-	bottom:60%;
-	width:12%;
-	left:25px;
+	width:220;
+	margin-left:50;
+	margin-top:-45%;
 	border-radius:15px;
-	background:rgb(231, 203, 208);
-	opacity:90%;
+	border:dotted 10px rgb(238, 231, 133);
+	font-family:'Quicksand', sans-serif;
+	font-size:20px;
 }
 
 .contact {
-	position:absolute;
-	bottom:30%;
-	width:14%;
-	left:25px;
+	width:220;
+	margin-left:10;
+	margin-top:30;
+	border-radius:15px;
+	border:dotted 10px pink;
+	font-family:'Quicksand', sans-serif;
+	font-size:20px;
 }
+  
+  
+.about-section  { 
+	margin-left:380px;
+	margin-top:560px;
+	width: 750px;
+	height:150px;
+	font-family:'Quicksand', sans-serif;
+	font-size:33px;
+	color:black;
+	-webkit-text-stroke:white .2px;
+} 
+h4{
+	font-family:'Barrio', cursive;
+	font-size:33px;
+	color:black;
+	float:right;
+}
+
 
 @keyframes slidein {
 	0% {
@@ -91,12 +117,12 @@ h1 {
 
 body #scene {
 	margin-top:30px;
-	margin-bottom:40px;
-	margin-left:220px;
+	margin-bottom:5px;
+	margin-left:300px;
 	padding-bottom:5px;
 	height:375px;
 	width: 70%;
-	position: absolute;
+	position:absolute;
 	background:rgb(231, 203, 208);
 	opacity:90%;
 	border-radius:20px;
