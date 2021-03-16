@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,9 +7,11 @@
    <meta name="description" content="SenPie">
     <meta name="author" content="siddub">
     <title>SenPie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Quicksand&display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Quicksand&display=swap" rel="stylesheet">  
     <link href="/required/css/index.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
   <body>
     <div class="header">
@@ -17,65 +20,10 @@
         <nav class="nav"> 
           <a href="#user"><%=user_email %></a> 
         </nav>
-    </div>
-    <br>
-    <form action="/order" method="POST">
-      <div id="scene">
-        <div id="left-zone">
-            <ul class="list">
-                <li class="item"><input type="radio" id="radio_The garden strawberry (or simply strawberry /ˈstrɔːbᵊri/; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria (collectively known as the strawberries)" name="basic_carousel" value="The garden strawberry (or simply strawberry /ˈstrɔːbᵊri/; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria (collectively known as the strawberries)" /><label class="label_strawberry" for="radio_The garden strawberry (or simply strawberry /ˈstrɔːbᵊri/; Fragaria × ananassa) is a widely grown hybrid species of the genus Fragaria (collectively known as the strawberries)">Sailor Moon Parfait</label>
-                    <div class="content content_strawberry"><span class="picto"></span>
-                        <label style="font-family:'Quicksand', sans-serif;";class="card" for="menuItem1"><%=menu[0].name%></label>
-                        <label for="price1">Price:$<%=menu[0].price%></label>                        
-                        <input type="hidden" id="price1" name="price1" value="<%=menu[0].price%>">
-                        <input id="menuItem1" type="checkbox" name="menuItem1" value="<%=menu[0].name%>"> 
-                    </div>
-                </li>
-                <li class="item"><input type="radio" id="radio_A banana is an edible fruit, botanically a berry, produced by several kinds of large herbaceous flowering plants in the genus Musa." name="basic_carousel" value="A banana is an edible fruit, botanically a berry, produced by several kinds of large herbaceous flowering plants in the genus Musa." /><label class="label_banana" for="radio_A banana is an edible fruit, botanically a berry, produced by several kinds of large herbaceous flowering plants in the genus Musa.">Kon Dome Cake</label>
-                    <div class="content content_banana"><span class="picto"></span>
-                        <label style="font-family:'Quicksand', sans-serif;";class="card" for="menuItem2"><%=menu[1].name%></label>
-                        <label for="price2">Price:$<%=menu[1].price%></label>
-                        <input type="hidden" id="price2" name="price2" value="<%=menu[1].price%>">
-                        <input id="menuItem2" type="checkbox" name="menuItem2" value="<%=menu[1].name%>">                             
-                    </div>
-                </li>
-                <li class="item"><input type="radio" id="radio_The apple tree (Malus domestica) is a deciduous tree in the rose family best known for its sweet, pomaceous fruit, the apple. It is cultivated worldwide as a fruit tree, and is the most widely grown species in the genus Malus." name="basic_carousel" value="The apple tree (Malus domestica) is a deciduous tree in the rose family best known for its sweet, pomaceous fruit, the apple. It is cultivated worldwide as a fruit tree, and is the most widely grown species in the genus Malus." /><label class="label_apple" for="radio_The apple tree (Malus domestica) is a deciduous tree in the rose family best known for its sweet, pomaceous fruit, the apple. It is cultivated worldwide as a fruit tree, and is the most widely grown species in the genus Malus.">Totoro Tarts</label>
-                    <div class="content content_apple"><span class="picto"></span>
-                        <label style="font-family:'Quicksand', sans-serif;";class="card" for="menuItem3"><%=menu[2].name%></label>
-                        <label for="price3">Price:$<%=menu[2].price%></label>
-                        <input type="hidden" id="price3" name="price3" value="<%=menu[2].price%>">
-                        <input id="menuItem3" type="checkbox" name="menuItem3" value="<%=menu[2].name%>"> 
-                    </div>
-                </li>
-                <li class="item"><input type="radio" id="radio_The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae." name="basic_carousel" value="The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae." /><label class="label_orange" for="radio_The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae.">Dragon Ball Cake Pops</label>
-                    <div class="content content_orange"><span class="picto"></span>
-                        <label style="font-family:'Quicksand', sans-serif;";class=card for="menuItem4"><%=menu[3].name%></label>
-                        <label for="price4">Price:$<%=menu[3].price%></label>
-                        <input type="hidden" id="price=4" name="price4" value="<%=menu[3].price%>">
-                        <input id="menuItem4" type="checkbox" name="menuItem4" value="<%=menu[3].name%>"> 
-                    </div>
-                </li>
-                <li class="item"><input type="radio" id="radio_The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae." name="basic_carousel" value="The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae." /><label class="label_orange2" for="radio_The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae.">Poke Ball Macarons</label>
-                    <div class="content content_orange2"><span class="picto"></span>
-                      <label style="font-family:'Quicksand', sans-serif;";class="card" for="menuItem5"><%=menu[4].name%></label>
-                      <label for="price5">Price:$<%=menu[4].price%></label>
-                      <input type="hidden" id="price5" name="price5" value="<%=menu[4].price%>">
-                      <input id="menuItem5" type="checkbox" name="menuItem5" value="<%=menu[4].name%>"> 
-                    </div>
-                </li>
-              </ul>
-          </div>
-          <div id="middle-border"></div>
-          <div id="right-zone"></div>
-        </div>
-      </div>
-      <input type="submit" id="submit" name="submit" value="Go To Cart">
-    </form>
-    <br>
-  
-    <br>
-    <div class="about-section"> 
-            <p> 
+        
+        
+    <!-- <div class="about-section"> 
+            <p> s
               "Here at Sen-Pie our goal is to   
               bake our hearts out and make our customers 
               happy. We offer a variety of anime-inspired  
@@ -83,9 +31,8 @@
               kitchen. We can't wait to make the treat of your dream!"
           </p> 
           <h4>-Goku, Owner & Founder</h4>
-    </div>
-  
-      <br>
+    </div> -->
+  <!------------------------------------------------------------------------------------------------------->
     <div class="hours">
       <h2>Hours</h2>
         <p>
@@ -94,6 +41,7 @@
           <li>Sun 9am-3pm</li>
         </p>
     </div>
+
     <div class="contact">
       <h2>Contact Info</h2>
       <p>
@@ -103,6 +51,77 @@
         555-987-1234
       </p>
     </div>
-                
+    </div>
+    <div class="menuItems container"> 
+      <h1>Menu</h1>
+
+      <div class="row">
+      <div class="card col-4" style="width: 18rem;">
+        <img src="required\css/images/parfait.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
+        <div class="card-body" style="background-color: aquamarine;">
+          <h5 class="card-title"><%=menu[0].name%></h5>
+          <p class="card-text">Price:$<%=menu[0].price%></p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+      </div>
+      <div class="card col-4" style="width: 18rem;">
+        <img src="required\css/images/cake.jpg.webp" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
+        <div class="card-body" style="background-color: aquamarine;">
+          <h5 class="card-title"><%=menu[1].name%></h5>
+          <p class="card-text">Price:$<%=menu[1].price%></p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+      </div>
+      <div class="card col-4" style="width: 18rem;">
+        <img src="required\css/images/tart.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
+        <div class="card-body" style="background-color: aquamarine;">
+          <h5 class="card-title"><%=menu[2].name%></h5>
+          <p class="card-text">Price:$<%=menu[2].price%></p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+        </div>
+        <div class="row">
+      </div>
+      <div class="card col-4" style="width: 18rem;">
+        <img src="required\css/images/pops.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
+        <div class="card-body" style="background-color: aquamarine;">
+          <h5 class="card-title"><%=menu[3].name%></h5>
+          <p class="card-text">Price:$<%=menu[3].price%></p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+      </div>
+      <div class="card col-4" style="width: 18rem;">
+        <img src="required\css/images/macaron.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
+        <div class="card-body" style="background-color: aquamarine;">
+          <h5 class="card-title"><%=menu[4].name%></h5>
+          <p class="card-text">Price:$<%=menu[4].price%></p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-25">
+        <div class="container card">
+          <h4>Cart
+            <span class="price" style="color:black;" >
+              <i class="fa fa-shopping-cart"></i>
+              <b>4</b>
+            </span>
+          </h4>
+          <p>Product 1<span class="price">$15</span></p>
+          <p>Product 2<span class="price">$5</span></p>
+          <p>Product 3<span class="price">$8</span></p>
+          <p>Product 4</a> <span class="price">$2</span></p>
+          <hr>
+          <p>Total <span class="price" style="color:black;"><b>$30</b></span></p>
+        </div>
+      </div>
+       
+    </div>
+      
+    
+  <script>
+
+    
+  </script>   
   </body>
 </html>

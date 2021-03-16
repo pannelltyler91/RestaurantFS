@@ -312,3 +312,17 @@ body #scene #right-zone {
 	height: 100%;
 	flex-grow: 3;
 }
+
+.menuItem{
+	padding:5px;
+	align-items:flex-start;
+	margin: 15px;
+	
+}
+.card{
+margin:15px;
+}
+img .card-img-top{
+	height: 196;
+	width: 262px;
+}

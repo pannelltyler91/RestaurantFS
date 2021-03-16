@@ -17,6 +17,7 @@ HomeRoutes.get('/',function(req,res){
             {name:'Dragon Ball Cake Pops', price:'450'},
             {name:'Pokeball Macarons',price:'1000'}];                                         
     let email = req.session.email;
+    
     res.render('home/index',{
         user_email: email, 
         menu:menu
