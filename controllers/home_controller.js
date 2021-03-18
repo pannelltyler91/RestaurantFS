@@ -36,7 +36,7 @@ HomeRoutes.post('/order', (req,res) => {
         item3:req.body.menuItem3,
         item4:req.body.menuItem4,
         item5:req.body.menuItem5,
-        totalPrice:parseInt(req.body.price1)+parseInt(req.body.price2)+ parseInt(req.body.price3)+parseInt(req.body.price4)+parseInt(req.body.price5)
+        totalPrice:req.body.total
       }).then(function(order){
           console.log(order.toJSON());
           console.log(req.body);

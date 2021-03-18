@@ -60,7 +60,7 @@
         <img src="required\css/images/parfait.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
         <div class="card-body" style="background-color: aquamarine;">
           <h5 class="card-title"><%=menu[0].name%></h5>
-          <p class="card-text">Price:$<%=menu[0].price%></p>
+          <p class="card-text">$<%=menu[0].price%></p>
           <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
       </div>
@@ -68,15 +68,15 @@
         <img src="required\css/images/cake.jpg.webp" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
         <div class="card-body" style="background-color: aquamarine;">
           <h5 class="card-title"><%=menu[1].name%></h5>
-          <p class="card-text">Price:$<%=menu[1].price%></p>
+          <p class="card-text">$<%=menu[1].price%></p>
           <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
       </div>
       <div class="card col-4" style="width: 18rem;">
         <img src="required\css/images/tart.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
-        <div class="card-body" style="background-color: aquamarine;">
+        <div class="card-body" style="background-color: aquamarine;height: 196px;">
           <h5 class="card-title"><%=menu[2].name%></h5>
-          <p class="card-text">Price:$<%=menu[2].price%></p>
+          <p class="card-text">$<%=menu[2].price%></p>
           <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
         </div>
@@ -86,7 +86,7 @@
         <img src="required\css/images/pops.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
         <div class="card-body" style="background-color: aquamarine;">
           <h5 class="card-title"><%=menu[3].name%></h5>
-          <p class="card-text">Price:$<%=menu[3].price%></p>
+          <p class="card-text">$<%=menu[3].price%></p>
           <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
       </div>
@@ -94,17 +94,17 @@
         <img src="required\css/images/macaron.jpg" class="card-img-top" alt="/RestaurantFS/required/css/images/parfait.jpg">
         <div class="card-body" style="background-color: aquamarine;">
           <h5 class="card-title"><%=menu[4].name%></h5>
-          <p class="card-text">Price:$<%=menu[4].price%></p>
+          <p class="card-text">$<%=menu[4].price%></p>
           <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
       </div>
       </div>
       <div class="col-25" style="border: 10px;">
-        <div class="container card" style="border:10px pink;" >
+        <div class="container card" style="border:5px aquamarine solid; background-color: pink; " >
           <h4>Cart
             <span class="price" style="color:black;" >
               <i class="fa fa-shopping-cart"></i>
-              <b>4</b>
+              <b></b>
             </span>
           </h4>
           <div >
@@ -113,16 +113,17 @@
           
           </div>
           </div>
-          <hr>
-          <p>Total <span class="price" style="color:black;"><b>$30</b></span></p>
-          <input id="checkOutButton" type="submit" name="submit" value="Checkout>"
-          </form>
+          
+        <p>Total <span class="price" style="color:black;"><b>$30</b></span></p>
+          <input id="checkOutButton" type="submit" name="submit" value="Checkout">
+        </form>
       </div>
        
     </div>
       
     
   <script>
+    //loops through Add To Cart Buttons and if button cliked, adds row with item information
     var AddToCartButtons = document.getElementsByClassName('btn btn-primary')
     console.log(AddToCartButtons);
     for(let i =0; i < AddToCartButtons.length; i++){
@@ -130,30 +131,40 @@
       console.log(button);
       console.log(button.parentElement.firstElementChild.innerHTML);
       let itemName = button.parentElement.firstElementChild.innerHTML;
+      let itemPrice = button.parentElement.children[1].innerHTML;
+      console.log(itemPrice);
       let cartItem = `<div class="row">
-          <label class="col-4"for="cartItem" >${itemName}</label>
+          <label class="col-4"for="cartItem" ><strong>${itemName}</strong></label>
           <div class="col-4"></div>
           <input type="number" class="cartItem col-1" value="1" width="5px">
-          <input type="hidden" name="${itemName}" value="${itemName}">
+          <input type="hidden" name="${itemName}" value="${itemName}" id="${itemName}">
+          <input type="hidden" name="${itemPrice}" value="${itemPrice}" id="${itemPrice}">
           <div class="col-1"></div>
           <button type="button" class="col-2" >Remove</button>
           </div>
           </div>`;
-      
-      button.addEventListener('click', () => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
         console.log('clicked');
-
-        document.getElementById('itemContainer').innerHTML += cartItem;
-    
-    
-        
+        document.getElementById('itemContainer').innerHTML += cartItem;  
       })
-      
-     
     }
-    document.getElementById('checkOutButton').addEventListener('click', ()=>{
+    //Checkout out button functionality to call /order POST endpoint
+    document.getElementById('checkOutButton').addEventListener('submit', ()=>{
         console.log('Checked Out');
       })
+
+    //loops through remove buttons and if they are clicked removes item from cart
+    var removeButtons = document.getElementsByClassName('col-2')
+    for(let i=0;i<removeButtons.length;i++){
+      console.log(removeButtons);
+      let removeButton = removeButtons[i];
+      removeButton.addEventListener('click',(e)=>{
+        console.log('removed');
+      })
+    }
+
+
     
   </script>   
   </body>

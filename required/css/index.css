@@ -315,18 +315,31 @@ body #scene #right-zone {
 
 .menuItem{
 	padding:5px;
-	align-items:flex-start;
 	margin: 15px;
 	
 }
 .card{
 margin:15px;
-border:10px pink;
+border:10px pink solid;
 }
 img .card-img-top{
 	height: 196;
 	width: 262px;
 }
-.cartItem{
+/* .row {
 	width:5%;
+	background-color: pink;
+	border: 2px solid aquamarine;
+} */
+
+.card-img-top{
+	height:196px;
+}
+#checkOutButton, .cartItem, .col-2{
+	background-color: aquamarine;
+}
+
+#itemContainer{
+	background-color: pink;
+	border: 2px solid aquamarine;
 }
