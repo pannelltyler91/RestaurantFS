@@ -31,7 +31,7 @@ HomeRoutes.post('/order', (req,res) => {
     console.log("this was posted");
     
     db.orders.create({
-        item1:req.body.menuItem1, 
+        item1:req.body.SailorMoonParfait, 
         item2:req.body.menuItem2,
         item3:req.body.menuItem3,
         item4:req.body.menuItem4,

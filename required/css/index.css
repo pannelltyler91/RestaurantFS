@@ -321,8 +321,12 @@ body #scene #right-zone {
 }
 .card{
 margin:15px;
+border:10px pink;
 }
 img .card-img-top{
 	height: 196;
 	width: 262px;
+}
+.cartItem{
+	width:5%;
 }
