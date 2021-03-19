@@ -31,12 +31,12 @@ HomeRoutes.post('/order', (req,res) => {
     console.log("this was posted");
     
     db.orders.create({
-        item1:req.body.SailorMoonParfait, 
+        item1:req.body.menuItem1, 
         item2:req.body.menuItem2,
         item3:req.body.menuItem3,
         item4:req.body.menuItem4,
         item5:req.body.menuItem5,
-        totalPrice:req.body.total
+        totalPrice:req.body.totalPrice
       }).then(function(order){
           console.log(order.toJSON());
           console.log(req.body);
