@@ -165,14 +165,17 @@
       })
     }
     //loops through remove buttons and if they are clicked removes item from cart
-    var removeButtons = document.getElementsByClassName('rButtons')
-    for(let i=0;i<removeButtons.length;i++){
-      console.log(removeButtons);
-      let removeButton = removeButtons[i];
-      removeButton.addEventListener('click',(e)=>{
-        console.log('removed');
-      })
-    }
+    document.getElementById('cart').addEventListener('click', function (e){
+      e.preventDefault();
+      if(e.target.class = 'col-2 rButton') {
+        console.log('clicked');
+        var removeButton = e.target;
+        removeButton.parentElement.remove(); 
+        let total = document.getElementById('totalPrice');
+        var itemPrice = 
+        total = total - 
+      }
+    })
     
   
  
