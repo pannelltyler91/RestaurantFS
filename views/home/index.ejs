@@ -124,14 +124,20 @@
       
     
   <script>
+
+    
+  
     //loops through Add To Cart Buttons and if button cliked, adds row with item information
-    var AddToCartButtons = document.getElementsByClassName('btn btn-primary')
-    console.log(AddToCartButtons);
-    var total = 0;
-    for(let i =0; i < AddToCartButtons.length; i++){
-      var button = AddToCartButtons[i];
-      console.log(button);
-      console.log(button.parentElement.firstElementChild.innerHTML);
+    
+      
+      
+      var AddToCartButtons = document.getElementsByClassName('btn btn-primary')
+      console.log(AddToCartButtons);
+      var total = 0;
+      for(let i =0; i < AddToCartButtons.length; i++){
+        var button = AddToCartButtons[i];
+        console.log(button);
+        console.log(button.parentElement.firstElementChild.innerHTML);
       let itemName = button.parentElement.firstElementChild.innerHTML.trim();
       let itemPrice = parseInt(button.parentElement.children[1].innerHTML.replace("$",""));
       let itemId = button.parentElement.parentElement.attributes[2].value;
@@ -144,22 +150,22 @@
           <input type="hidden" name="${itemId}" value="${itemName}" id="${itemName}">
           <input type="hidden" name="${itemId}price" value="${itemPrice}" id="${itemPrice}">
           <div class="col-1"></div>
-          <button type="button" class="col-2" >Remove</button>
+          <button type="button" class="col-2 rButtons">Remove</button>
           </div>
           `;
-      button.addEventListener('click', (event) => {
-        event.preventDefault();
+          button.addEventListener('click', (event) => {
+            event.preventDefault();
         console.log(cartItem);
         total = total+itemPrice
-       let label = `<label style="font-family: Quicksand;" for="total"><strong>Total </strong> <span id="totalPrice" style="color:black;">$${total}</span></label>
-         <input type="hidden" name="totalPrice" value="${total}">`
+        let label = `<label style="font-family: Quicksand;" for="total"><strong>Total </strong> <span id="totalPrice" style="color:black;">$${total}</span></label>
+        <input type="hidden" name="totalPrice" value="${total}">`
         document.getElementById('itemContainer').innerHTML += cartItem;  
         document.getElementById('totalPrice').innerHTML = label;
         console.log(label);
       })
     }
     //loops through remove buttons and if they are clicked removes item from cart
-    var removeButtons = document.getElementsByClassName('col-2')
+    var removeButtons = document.getElementsByClassName('rButtons')
     for(let i=0;i<removeButtons.length;i++){
       console.log(removeButtons);
       let removeButton = removeButtons[i];
@@ -167,9 +173,10 @@
         console.log('removed');
       })
     }
-
-
     
+  
+ 
+  
   </script>   
   </body>
 </html>
