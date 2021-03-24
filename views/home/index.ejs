@@ -112,11 +112,13 @@
           <div class="row" id="itemContainer">
           
           </div>
+          <div class="row" id="totalHolder">
+          <label style="font-family: Quicksand;" for="total"><strong> Total </strong> <span id="totalPrice" style="color:black;">$</span></label>
+           <div class="col-6"></div>
+          <input id="checkOutButton" type="submit" name="submit" value="Checkout">
+          </div>
           </div>
           
-        <label style="font-family: Quicksand;" for="total"><strong>Total </strong> <span id="totalPrice" style="color:black;">$</span></label>
-         
-        <input id="checkOutButton" type="submit" name="submit" value="Checkout">
         </form>
       </div>
        
@@ -127,7 +129,7 @@
 
     
   
-    //loops through Add To Cart Buttons and if button cliked, adds row with item information
+    //loops through Add To Cart Buttons and defines variables to use within each button's scope
     
       
       
@@ -143,6 +145,9 @@
       let itemId = button.parentElement.parentElement.attributes[2].value;
       console.log(itemPrice);
       console.log(itemId);
+
+
+      //defines a cart item 
       let cartItem = `<div class="row">
           <label class="col-4"for="cartItem" ><strong>${itemName}</strong></label>
           <div class="col-4"></div>
@@ -153,12 +158,14 @@
           <button type="button" class="col-2 rButtons">Remove</button>
           </div>
           `;
+
+          // adds a cart item to the cart and updates the total price of the cart
           button.addEventListener('click', (event) => {
             event.preventDefault();
         console.log(cartItem);
         total = total+itemPrice
-        let label = `<label style="font-family: Quicksand;" for="total"><strong>Total </strong> <span id="totalPrice" style="color:black;">$${total}</span></label>
-        <input type="hidden" name="totalPrice" value="${total}">`
+        let label = `<label style="font-family: Quicksand;" for="total id="totalPrice"><strong>$${total}</strong> 
+        <input type="hidden" name="totalPrice" id="cartTotal"value="${total}">`
         document.getElementById('itemContainer').innerHTML += cartItem;  
         document.getElementById('totalPrice').innerHTML = label;
         console.log(label);
@@ -169,15 +176,15 @@
       e.preventDefault();
       if(e.target.class = 'col-2 rButton') {
         console.log('clicked');
-        var removeButton = e.target;
-        removeButton.parentElement.remove(); 
-        let total = document.getElementById('totalPrice');
-        var itemPrice = 
-        total = total - 
+        let cartTotal =parseInt(document.getElementById('totalHolder').children[0].innerText.replace("Total $",""));
+        let itemPrice = parseInt(e.target.parentElement.children[4].value);
+        cartTotal = cartTotal-itemPrice;
+        document.getElementById('totalPrice').innerText = cartTotal;
+        
       }
     })
     
-  
+    
  
   
   </script>   
